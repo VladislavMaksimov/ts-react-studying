@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import UsersPage from "./pages/UsersPage/UsersPage";
 import TodosPage from "./pages/TodosPage/TodosPage";
 import { Layout } from "./components/Layout";

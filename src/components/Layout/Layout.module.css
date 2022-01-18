@@ -1,0 +1,9 @@
+.header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px 30px;
+}
+
+.header > *:not(:nth-last-child(1)) {
+  margin-right: 10px;
+}

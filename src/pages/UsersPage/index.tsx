@@ -8,6 +8,8 @@ import { PageLoader } from "../../components/PageLoader";
 
 const UsersPage = () => {
   const [users, setUsers] = useState<IUser[]>([]);
+  const [searchWord, setSearchWord] = useState<string | undefined>(undefined);
+
   const [getUsers, loading, getUsersError] = useFetching(async () => {
     const response = await axios.get<IUser[]>(
       "https://jsonplaceholder.typicode.com/users/"
@@ -25,10 +27,17 @@ const UsersPage = () => {
       {loading ? (
         <PageLoader />
       ) : (
-        <List
-          items={users}
-          renderItem={(user: IUser) => <UserItem user={user} key={user.id} />}
-        />
+        <>
+          <input
+            type="text"
+            value={searchWord}
+            onChange={(e) => setSearchWord(e.target.value)}
+          />
+          <List
+            items={users}
+            renderItem={(user: IUser) => <UserItem user={user} key={user.id} />}
+          />
+        </>
       )}
     </>
   );

@@ -3,8 +3,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Layout } from "./components/Layout";
 import { PageLoader } from "./components/PageLoader";
 
-const UsersPage = lazy(() => import("./pages/UsersPage/UsersPage"));
-const TodosPage = lazy(() => import("./pages/TodosPage/TodosPage"));
+const UsersPage = lazy(() => import("./pages/UsersPage"));
+const TodosPage = lazy(() => import("./pages/TodosPage"));
 
 function App() {
   return (

@@ -10,9 +10,9 @@ const UsersPage = () => {
   const [users, setUsers] = useState<IUser[]>([]);
   const [searchWord, setSearchWord] = useState<string>("");
 
-  const filteredUsers = useFilteredArray(users, searchWord, (user) => {
-    return user.name.toLowerCase().includes(searchWord.toLowerCase());
-  });
+  const filteredUsers = useFilteredArray(users, searchWord, (user) =>
+    user.name.toLowerCase().includes(searchWord.toLowerCase())
+  );
 
   const [getUsers, loading, getUsersError] = useFetching(async () => {
     const response = await axios.get<IUser[]>(
@@ -35,7 +35,7 @@ const UsersPage = () => {
           users={filteredUsers}
           searchWord={searchWord}
           setSearchWord={(e) => setSearchWord(e.target.value)}
-        ></UsersPageBody>
+        />
       )}
     </>
   );

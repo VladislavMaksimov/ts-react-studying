@@ -7,7 +7,7 @@ import { InputText } from "../../../components/InputText";
 
 interface UsersPageBodyProps {
   users: IUser[];
-  searchWord: string | undefined;
+  searchWord: string;
   setSearchWord: ChangeEventHandler<HTMLInputElement>;
 }
 

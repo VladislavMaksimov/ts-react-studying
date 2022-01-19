@@ -2,7 +2,7 @@ import React, { ChangeEventHandler, FC } from "react";
 import styles from "./Input.module.css";
 
 interface InputProps {
-  value: string | undefined;
+  value: string;
   placeholder?: string;
   changeHandler: ChangeEventHandler<HTMLInputElement>;
 }

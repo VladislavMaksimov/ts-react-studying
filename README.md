@@ -18,8 +18,11 @@ Frameworks, libraries, advanced features of programming languages, etc.
 ### Interface Logic
 - advanced React features 
   - [React.lazy](https://reactjs.org/docs/react-api.html#reactlazy) to implement lazy loading of pages
+  - hooks
+    - [useMemo](https://reactjs.org/docs/hooks-reference.html#usememo) to implement memoization
   - custom hooks
     - *useFetching* that handles fetching data state of a component
+    - *useFilteredArray* that filter array via callback function
 
 ### Connection with API
 

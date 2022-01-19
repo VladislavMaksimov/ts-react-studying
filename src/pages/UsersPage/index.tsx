@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { List } from "../../components/List";
 import { IUser } from "../../types";
-import UserItem from "../../components/UserItem/UserItem";
 import axios from "axios";
 import { useFetching } from "../../hooks/useFetching/useFetching";
 import { PageLoader } from "../../components/PageLoader";
+import UsersPageBody from "./UsersPageBody";
 
 const UsersPage = () => {
   const [users, setUsers] = useState<IUser[]>([]);
@@ -27,17 +26,11 @@ const UsersPage = () => {
       {loading ? (
         <PageLoader />
       ) : (
-        <>
-          <input
-            type="text"
-            value={searchWord}
-            onChange={(e) => setSearchWord(e.target.value)}
-          />
-          <List
-            items={users}
-            renderItem={(user: IUser) => <UserItem user={user} key={user.id} />}
-          />
-        </>
+        <UsersPageBody
+          users={users}
+          searchWord={searchWord}
+          setSearchWord={(e) => setSearchWord(e.target.value)}
+        ></UsersPageBody>
       )}
     </>
   );

@@ -1,18 +1,22 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import UsersPage from "./pages/UsersPage/UsersPage";
-import TodosPage from "./pages/TodosPage/TodosPage";
 import { Layout } from "./components/Layout";
+import { PageLoader } from "./components/PageLoader";
+
+const UsersPage = lazy(() => import("./pages/UsersPage/UsersPage"));
+const TodosPage = lazy(() => import("./pages/TodosPage/TodosPage"));
 
 function App() {
   return (
     <BrowserRouter>
       <Layout>
-        <Routes>
-          <Route path="/users" element={<UsersPage />} />
-          <Route path="/todos" element={<TodosPage />} />
-          <Route index element={<div />} />
-        </Routes>
+        <Suspense fallback={<PageLoader />}>
+          <Routes>
+            <Route path="/users" element={<UsersPage />} />
+            <Route path="/todos" element={<TodosPage />} />
+            <Route index element={<div />} />
+          </Routes>
+        </Suspense>
       </Layout>
     </BrowserRouter>
   );

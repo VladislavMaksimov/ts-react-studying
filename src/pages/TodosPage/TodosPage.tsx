@@ -4,9 +4,7 @@ import axios from "axios";
 import { List } from "../../components/List";
 import TodoItem from "../../components/TodoItem/TodoItem";
 import { useFetching } from "../../hooks/useFetching/useFetching";
-import { Loader } from "../../components/Loader";
-import styles from "./TodosPage.module.css";
-import { LoaderSize } from "../../components/Loader/constants";
+import { PageLoader } from "../../components/PageLoader";
 
 const TodosPage: FC = () => {
   const [todos, setTodos] = useState<ITodo[]>([]);
@@ -25,9 +23,7 @@ const TodosPage: FC = () => {
     <>
       {getTodosError && <h1>Alert</h1>}
       {loading ? (
-        <div className={styles.loaderWrapper}>
-          <Loader size={LoaderSize.lg} />
-        </div>
+        <PageLoader />
       ) : (
         <List
           items={todos}

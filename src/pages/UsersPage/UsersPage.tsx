@@ -4,9 +4,7 @@ import { IUser } from "../../types";
 import UserItem from "../../components/UserItem/UserItem";
 import axios from "axios";
 import { useFetching } from "../../hooks/useFetching/useFetching";
-import { Loader } from "../../components/Loader";
-import { LoaderSize } from "../../components/Loader/constants";
-import styles from "./UsersPage.module.css";
+import { PageLoader } from "../../components/PageLoader";
 
 const UsersPage = () => {
   const [users, setUsers] = useState<IUser[]>([]);
@@ -25,9 +23,7 @@ const UsersPage = () => {
     <>
       {getUsersError && <h1>Alert</h1>}
       {loading ? (
-        <div className={styles.loaderWrapper}>
-          <Loader size={LoaderSize.lg} />
-        </div>
+        <PageLoader />
       ) : (
         <List
           items={users}

@@ -15,6 +15,12 @@ Frameworks, libraries, advanced features of programming languages, etc.
 - [Create React App](https://create-react-app.dev/) to use project configuration templates
   - typescript template
 
+### Interface Logic
+- advanced React features 
+  - [React.lazy](https://reactjs.org/docs/react-api.html#reactlazy) to implement lazy loading of pages
+  - custom hooks
+    - *useFetching* that handles fetching data state of a component
+
 ### Connection with API
 
 - [Axios](https://github.com/axios/axios) to create HTTP requests via simple code

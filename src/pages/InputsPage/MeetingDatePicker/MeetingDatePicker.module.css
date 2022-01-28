@@ -1,0 +1,13 @@
+.datePicker {
+  padding: 5px 10px;
+  border: 2px solid gray;
+  border-radius: 4px;
+}
+
+.day {
+  padding: 10px;
+}
+
+.day:nth-child(even) {
+  background: red;
+}

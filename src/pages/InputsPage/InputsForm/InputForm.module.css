@@ -1,0 +1,10 @@
+.formWrapper {
+  padding: 20px 30%;
+}
+
+.form {
+  padding: 10px 20px;
+  min-height: 300px;
+  border: 2px solid gray;
+  border-radius: 8px;
+}

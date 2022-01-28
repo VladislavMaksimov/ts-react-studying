@@ -5,6 +5,7 @@ import { PageLoader } from "./components/PageLoader";
 
 const UsersPage = lazy(() => import("./pages/UsersPage"));
 const TodosPage = lazy(() => import("./pages/TodosPage"));
+const InputsPage = lazy(() => import("./pages/InputsPage"));
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Routes>
             <Route path="/users" element={<UsersPage />} />
             <Route path="/todos" element={<TodosPage />} />
+            <Route path="/inputs" element={<InputsPage />} />
             <Route index element={<div />} />
           </Routes>
         </Suspense>

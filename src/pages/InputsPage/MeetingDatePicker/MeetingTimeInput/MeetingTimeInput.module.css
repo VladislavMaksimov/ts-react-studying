@@ -1,0 +1,6 @@
+.timeInput {
+  max-width: 50px;
+  padding: 2px 5px;
+  border: 1px solid red;
+  border-radius: 4px;
+}

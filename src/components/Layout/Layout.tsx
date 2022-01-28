@@ -8,6 +8,7 @@ export const Layout: FC = ({ children }) => {
       <header className={styles.header}>
         <NavLink to={"/users"}>Users</NavLink>
         <NavLink to={"/todos"}>Todos</NavLink>
+        <NavLink to={"/inputs"}>Inputs</NavLink>
       </header>
       <main>{children}</main>
     </>
